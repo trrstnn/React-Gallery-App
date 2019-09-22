@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {
   BrowserRouter,
-  Route,
-  Switch
+  Route
+ 
 } from 'react-router-dom';
 import axios from 'axios';
 import apiKey from './config'
-import SearchForm from './Components/SearchForm';
+// import SearchForm from './Components/SearchForm';
 import Nav from './Components/Nav';
 import PhotoList from './Components/PhotoList';
 
@@ -45,9 +45,15 @@ class App extends Component {
     return (
       <BrowserRouter>
       <div>
-        <SearchForm onSearch={this.performSearch}/>
-        <Nav search={this.performSearch}/>
-        <PhotoList data={this.state.photos} query={this.state.query} />
+        <Nav onSearch={this.performSearch}/>
+        <PhotoList data={this.state.photos} query={this.state.query} /> 
+        {/* <Route path={`/`} 
+              render={ () => <PhotoList data={this.state.photos} query={this.state.query} /> } />     
+        <Route path= '/Cat' 
+              render={ () => <PhotoList data={this.state.photos} query={this.state.query} onSearch={this.performSearch} currentQuery="cats" /> } 
+              /> */}
+              
+        
         </div>
       </BrowserRouter>
     );

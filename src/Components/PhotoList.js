@@ -4,6 +4,12 @@ import Photo from './Photo'
 
 const PhotoList = (props) => {
     
+// componentDidMount(){
+    
+//     props.onSearch(props.currentQuery)
+
+// }
+
     let results=props.data;
     let allPhotos;
     allPhotos = results.map(pic =>

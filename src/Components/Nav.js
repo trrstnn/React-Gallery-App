@@ -1,21 +1,17 @@
 import React from 'react';
-import {Route, NavLink,Redirect} from 'react-router-dom';
-import App from '../App'
+import {NavLink} from 'react-router-dom';
+import SearchForm from './SearchForm';
 
-const Nav = () =>{
+const Nav = (props) =>{
     return(
         <nav class="main-nav">
+        <SearchForm onSearch={props.onSearch}/>
         <ul>
           <li><NavLink to={`/Cats`}>Cats</NavLink></li>
           <li><NavLink to={`/Dogs`}>Dogs</NavLink></li>
           <li><NavLink to={`/Computers`}>Computers</NavLink></li>
         </ul>
-        <Route path={`/Cats`} 
-           render={ () => <App  /> } />         
-        <Route path={`Dogs`} 
-              render={ () => <App  /> } />     
-        <Route path={`Computers`} 
-              render={ () => <App  /> } />
+        
       </nav>
     );
 
