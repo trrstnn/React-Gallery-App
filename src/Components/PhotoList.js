@@ -1,20 +1,18 @@
 import React from 'react';
-import Photo from './Photo'
-
+import Photo from './Photo';
+import NotFound from './NotFound';
 
 const PhotoList = (props) => {
     
-// componentDidMount(){
-    
-//     props.onSearch(props.currentQuery)
-
-// }
-
     let results=props.data;
     let allPhotos;
+    if (results.length > 0){
     allPhotos = results.map(pic =>
         <Photo server={pic.server} key={pic.id} secret={pic.secret} id={pic.id} farm={pic.farm} title={pic.title}/> 
         )
+    } else{
+        allPhotos = <NotFound />;
+    }
        
         return(
            
