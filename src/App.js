@@ -24,7 +24,7 @@ class App extends Component {
    this.performSearch();
   }
 
-  performSearch = (query) => {
+  performSearch = (query = 'cats') => {
     axios.get(`  https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
       
     .then(response => {
@@ -45,10 +45,10 @@ class App extends Component {
       <BrowserRouter>
       <div>
         <Nav onSearch={this.performSearch}/>
-        <Route exact path= '/' 
+        {/* <Route exact path= '/' 
               render={ () => {this.performSearch('programmer'); return <PhotoList data={this.state.photos} query={this.state.query}/>} } 
-              /> 
-        <Route exact path= '/Search' 
+              />  */}
+        <Route exact path= '/' 
               render={ () =>  <PhotoList data={this.state.photos} query={this.state.query}/> } 
               />    
         <Route  path= '/Cats' 
