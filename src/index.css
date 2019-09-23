@@ -4,6 +4,15 @@ body {
   color: #3f4850;
 }
 
+.nav-container{
+  background-image: url('./nav-bg.jpg');
+  background-size: cover;
+  height:25rem;
+}
+.app-title{
+  padding-top:2rem;
+  font-size: 25px;
+}
 h2 {
   font-size: 2em;
   margin: 52px 0 40px;
@@ -52,7 +61,7 @@ input {
 
 .main-nav a {
   display: block;
-  background: #438bbd;
+  background: #0d0f1185;
   border-radius: 3px;
   padding: 5px;
   color: #fff;
@@ -61,7 +70,7 @@ input {
 .main-nav .active,
 .main-nav a:hover,
 .search-form button:hover {
-  background-color: #275270;
+  background-color: #030303;
 }
 
 .photo-container ul {
