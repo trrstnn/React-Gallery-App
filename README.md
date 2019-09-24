@@ -19,7 +19,7 @@
 
 #Get a Flickr API key
 * Create yahoo account/use tumblr account to sign in.
-* Apply for a non-commercial API key.
+* Apply for a [non commercial API key](https://www.flickr.com/services/apps/create/apply/)
 * You’ll need to set up a config.js file in your project that imports your API key into your application so that you and other users can request data from the Flickr API. This should be imported into src/App.js.
 * The config.js file should look something like this:
     ```javascript
