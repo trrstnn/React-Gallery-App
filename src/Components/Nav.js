@@ -1,19 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import SearchForm from './SearchForm';
 
-const Nav = (props) =>{
+
+
+class Nav extends Component {
+  
+  render(){
+  
     return(
         <nav class="main-nav">
-        <SearchForm onSearch={props.onSearch}/>
+        <SearchForm onSearch={this.props.onSearch}/>
         <ul>
-          <li><NavLink to={`/Cats`}>Cats</NavLink></li>
-          <li><NavLink to={`/Dogs`}>Dogs</NavLink></li>
-          <li><NavLink to={`/Computers`}>Computers</NavLink></li>
+          <li><NavLink to={`/Wildflowers`}>Wildflowers</NavLink></li>
+          <li><NavLink to={`/Coffee`}>Coffee</NavLink></li>
+          <li><NavLink to={`/Art`}>Art</NavLink></li>
         </ul>
         
       </nav>
     );
+}
 
 }
 export default Nav

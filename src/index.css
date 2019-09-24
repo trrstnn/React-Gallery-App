@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Mansalva');
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+
 body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
@@ -10,13 +13,18 @@ body {
   height:25rem;
 }
 .app-title{
-  padding-top:2rem;
-  font-size: 25px;
+  padding-top:2px;
+  font-size: 3rem;
+  font-family: 'Mansalva', cursive;
+  color:rgb(255, 255, 255);
+
 }
 h2 {
   font-size: 2em;
   margin: 52px 0 40px;
   text-transform: capitalize;
+  font-family: 'Architects Daughter', cursive;
+
 }
 
 ul {
@@ -36,7 +44,7 @@ a {
 
 .search-form button {
   outline: none;
-  background-color: #438bbd;
+  background-color: #06070783;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;

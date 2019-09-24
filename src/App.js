@@ -48,7 +48,7 @@ class App extends Component {
       <div>
       <div className="nav-container">
         <div className="app-title">
-          <h1>Uncover</h1>
+          <h1>Disclose</h1>
         </div>
         <div className="nav-bar">
           <Nav onSearch={this.performSearch}/>
@@ -60,16 +60,20 @@ class App extends Component {
         <Route exact path= '/' 
               render={ () => 
                <PhotoList data={this.state.photos} query={this.state.query} /> } 
-              />    
-        <Route  path= '/Cats' 
-              render={ () => {this.performSearch('cats'); return <PhotoList data={this.state.photos} query={this.state.query}/>} } 
               />
-        <Route  exact path= '/Dogs' 
-            render={ () => {this.performSearch('dogs'); return <PhotoList data={this.state.photos} query={this.state.query}/>} } 
+        <Route exact path= '/:query' 
+        render={ () => 
+          <PhotoList data={this.state.photos} query={this.state.query} /> } 
+        />        
+        <Route  path= '/Wildflowers' 
+              render={ () => {this.performSearch('wildflowers'); return <PhotoList data={this.state.photos} query={this.state.query}/>} } 
             />
-        <Route  exact path= '/Computers' 
-          render={ () => {this.performSearch('computers'); return <PhotoList data={this.state.photos} query={this.state.query}/>} } 
-          />
+        <Route  exact path= '/Coffee' 
+            render={ () => {this.performSearch('espresso'); return <PhotoList data={this.state.photos} query={"Coffee"}/>} } 
+            />
+        <Route  exact path= '/Art' 
+          render={ () => {this.performSearch('paintings'); return <PhotoList data={this.state.photos} query={"Art"}/>} } 
+            />
               
         
         </div>
