@@ -9,7 +9,7 @@ class Nav extends Component {
   render(){
   
     return(
-        <nav class="main-nav">
+        <nav className="main-nav">
         <SearchForm onSearch={this.props.onSearch}/>
         <ul>
           <li><NavLink to={`/Wildflowers`}>Wildflowers</NavLink></li>

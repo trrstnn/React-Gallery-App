@@ -15,7 +15,16 @@
 
 
 
+## App needs an API key to run. Here is a way you can go about that:
 
+#Get a Flickr API key
+* Create yahoo account/use tumblr account to sign in.
+* Apply for a non-commercial API key.
+* You’ll need to set up a config.js file in your project that imports your API key into your application so that you and other users can request data from the Flickr API. This should be imported into src/App.js.
+* The config.js file should look something like this:
+ ```const apiKey = 'YOUR API KEY';
+    export default apiKey;```
+* Import your API key into your application, preferably into src/App.js, and save it to a variable l     ike you would any other module, and use the variable where applicable. That way, your app’s users      will only need to enter in an API key once.
 
 
 ## Available Scripts

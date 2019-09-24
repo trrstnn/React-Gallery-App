@@ -65,13 +65,13 @@ class App extends Component {
         render={ () => 
           <PhotoList data={this.state.photos} query={this.state.query} /> } 
         />        
-        <Route  path= '/Wildflowers' 
+        <Route path= '/Wildflowers' 
               render={ () => {this.performSearch('wildflowers'); return <PhotoList data={this.state.photos} query={this.state.query}/>} } 
             />
-        <Route  exact path= '/Coffee' 
+        <Route  path= '/Coffee' 
             render={ () => {this.performSearch('espresso'); return <PhotoList data={this.state.photos} query={"Coffee"}/>} } 
             />
-        <Route  exact path= '/Art' 
+        <Route path= '/Art' 
           render={ () => {this.performSearch('paintings'); return <PhotoList data={this.state.photos} query={"Art"}/>} } 
             />
               
