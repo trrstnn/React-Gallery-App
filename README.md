@@ -1,4 +1,22 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Gallery 
+
+[Check out the live version here!](http://trrstnn.github.io/React-Gallery-App)
+
+## A photo gallery that allows a user to search for pictures using flickr's photo search API 
+
+## Technologies
+* ReactJs
+* API
+* React Router
+* Axios
+* CSS3
+* JSX
+
+
+
+
+
+
 
 ## Available Scripts
 
