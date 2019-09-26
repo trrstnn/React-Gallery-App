@@ -15,9 +15,6 @@ const PhotoList = (props) => {
     }
     return(
            
-    (props.loading)
-    ?<p>Loading....</p>
-       : 
             <div className="photo-container">
             <h2>{`Results for ${props.query}`}</h2>
             <ul>
