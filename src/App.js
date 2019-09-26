@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
   BrowserRouter,
-  Route
+  Route,
+ Switch
  
 } from 'react-router-dom';
 import axios from 'axios';
@@ -17,7 +18,7 @@ class App extends Component {
     this.state={
       photos:[],
       query:"",
-      loading: false
+      loading: true
 
     };
   } 
@@ -26,13 +27,14 @@ class App extends Component {
    this.performSearch();
   }
 
-  performSearch = (query = 'Plants') => {
+  performSearch = (query) => {
     axios.get(`  https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
       
     .then(response => {
       this.setState({
         photos:response.data.photos.photo,
-        query: query
+        query: query,
+        loading: false
        
       }); 
       
@@ -45,38 +47,40 @@ class App extends Component {
     
     return (
       <BrowserRouter basename="/React-Gallery-App">
-      <div>
-      <div className="nav-container">
-        <div className="app-title">
-          <h1>Disclose</h1>
-        </div>
-        <div className="nav-bar">
-          <Nav onSearch={this.performSearch}/>
-          </div>
-        </div>
-        {/* <Route exact path= '/' 
-              render={ () => {this.performSearch('programmer'); return <PhotoList data={this.state.photos} query={this.state.query}/>} } 
-              />  */}
-        <Route exact path= '/' 
-              render={ () => 
-               <PhotoList data={this.state.photos} query={this.state.query} /> } 
-              />
-        <Route exact path= '/:query' 
-        render={ () => 
-          <PhotoList data={this.state.photos} query={this.state.query} /> } 
-        />        
-        <Route path= '/Wildflowers' 
-              render={ () => {this.performSearch('wildflowers'); return <PhotoList data={this.state.photos} query={this.state.query}/>} } 
-            />
-        <Route  path= '/Coffee' 
-            render={ () => {this.performSearch('espresso'); return <PhotoList data={this.state.photos} query={"Coffee"}/>} } 
-            />
-        <Route path= '/Art' 
-          render={ () => {this.performSearch('paintings'); return <PhotoList data={this.state.photos} query={"Art"}/>} } 
-            />
-              
         
+      <div>
+        <div className="nav-container">
+          <div className="app-title">
+            <h1>Disclose</h1>
+          </div>
+          <div className="nav-bar">
+            <Nav onSearch={this.performSearch}/>
+            </div>
+          </div>
+            {
+                (this.state.loading)
+                ? <h1>Loading...</h1>
+                : 
+            <Switch>
+              <Route exact path= '/' 
+                    render={ () => {this.performSearch('programmer'); return <PhotoList data={this.state.photos} query={this.state.query}/>} } 
+                    /> 
+              {/* <Route exact path= '/' 
+                    render={ () => 
+                    <PhotoList data={this.state.photos} query={this.state.query} /> } 
+                    /> */}
+              <Route path= '/search/:query' 
+              render={ () => 
+                
+                <PhotoList data={this.state.photos} query={this.state.query} onSearch={this.performSearch} loading={this.state.loading} /> } 
+              />   
+              
+            </Switch>
+            }
         </div>
+     
+        
+          
       </BrowserRouter>
     );
   }

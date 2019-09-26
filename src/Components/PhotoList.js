@@ -3,7 +3,7 @@ import Photo from './Photo';
 import NotFound from './NotFound';
 
 const PhotoList = (props) => {
-    
+   console.log(props)
     let results=props.data;
     let allPhotos;
     if (results.length > 0){
@@ -13,9 +13,11 @@ const PhotoList = (props) => {
     } else{
         allPhotos = <NotFound />;
     }
-       
-        return(
+    return(
            
+    (props.loading)
+    ?<p>Loading....</p>
+       : 
             <div className="photo-container">
             <h2>{`Results for ${props.query}`}</h2>
             <ul>
